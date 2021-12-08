@@ -3,6 +3,7 @@
   "custom": {
     "newRelic": {
       "accountId": "${env:NEW_RELIC_ACCOUNT_ID}",
+      "apiKey": "${env:NEW_RELIC_PERSONAL_API_KEY}",
       "debug": true,
       "enableExtension": true,
       "logEnabled": true,
