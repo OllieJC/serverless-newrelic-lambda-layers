@@ -235,6 +235,14 @@ https://blog.newrelic.com/product-news/aws-lambda-extensions-integrations/
     }
 
     const { exclude = [], include = [] } = this.config;
+
+    if (!this.config.apiKey || this.config.apiKey === "") {
+      this.serverless.cli.log(
+        `Please use a valid New Relic API key as your apiKey value; skipping.`
+      );
+      return;
+    }
+
     if (!_.isEmpty(exclude) && !_.isEmpty(include)) {
       this.serverless.cli.log(
         "exclude and include options are mutually exclusive; skipping."
